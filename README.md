@@ -10,6 +10,7 @@ App that simulates a shopping cart where users can manage products, add/remove p
 
 Before starting, it is necessary to have already installed and configured in your system:
   - Ruby ver. 3.0.1+
+  - git ver 2.32.0+
 
 ### Start
 
@@ -20,7 +21,7 @@ git clone git@github.com:SneyderHOL/shopping_cart_program.git
 
 Get inside the path of the project:
 ``` sh
-cd shopping_cart_program
+cd shopping_cart_program/src
 ```
 
 Run app:
