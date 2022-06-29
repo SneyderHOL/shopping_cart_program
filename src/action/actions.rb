@@ -132,7 +132,7 @@ module Action
     # list products actions
 
     def self.add_product_to_cart(resource, quantity)
-      unless resource.enough_stock_add_to_cart(quantity)
+      unless resource.enough_stock_add_to_cart?(quantity)
         View::Prompt.not_enough_stock
         return false
       end
@@ -210,7 +210,7 @@ module Action
 
       resource = Model::Product.find(id)
       quantity = View::Prompt.product_quantity_add_to_cart.to_i
-      unless resource.enough_stock_add_to_cart(quantity)
+      unless resource.enough_stock_add_to_cart?(quantity)
         View::Prompt.not_enough_stock
         return false
       end
@@ -247,7 +247,7 @@ module Action
       number_of_products = total_products = total = 0
       hash_products.each do |key, value|
         resource = Model::Product.find(key)
-        unless resource.enough_stock_add_to_cart(value[:quantity])
+        unless resource.enough_stock_add_to_cart?(value[:quantity])
           View::Prompt.not_enough_stock_to_place_order(resource.name)
           return false
         end
