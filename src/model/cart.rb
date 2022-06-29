@@ -1,7 +1,6 @@
 module Model
   class Cart
     @@products = {}
-    # attr_accessor :date, :total, :number_of_products, :total_products, :id
 
     def self.add_product(id, quantity)
       @@products[id] = { quantity: quantity }
